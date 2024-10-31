@@ -52,11 +52,18 @@ characterSelect.addEventListener('change', () => {
         const savedDownThrow = localStorage.getItem(`${selectedCharacter}-down-throw`);
         const downThrowInput = document.getElementById('down-throw-ftilt');
         downThrowInput.innerText = savedDownThrow ? savedDownThrow : ''; // Set innerText for editable div
+
+        // Load saved down throw color if available
+        const savedDownThrowColor = localStorage.getItem(`${selectedCharacter}-down-throw-color`);
+        if (savedDownThrowColor) {
+            downThrowInput.style.backgroundColor = savedDownThrowColor; // Set color if it exists
+        }
     } else {
         icon.style.display = 'none'; // Hide the large icon if no character is selected
         selectIcon.style.display = 'none'; // Hide the small icon if no character is selected
         document.getElementById('note').value = ''; // Clear the note
         document.getElementById('down-throw-ftilt').innerText = ''; // Clear down throw input
+        document.getElementById('down-throw-ftilt').style.backgroundColor = ''; // Reset color
     }
 });
 
@@ -69,15 +76,30 @@ document.getElementById('save-button').addEventListener('click', () => {
     if (selectedCharacter) {
         localStorage.setItem(`${selectedCharacter}-note`, noteContent); // Save note to local storage
         localStorage.setItem(`${selectedCharacter}-down-throw`, downThrowValue); // Save down throw value
+        const downThrowColor = document.getElementById('down-throw-ftilt').style.backgroundColor;
+        localStorage.setItem(`${selectedCharacter}-down-throw-color`, downThrowColor); // Save down throw color
 
-        document.getElementById('saved-note-message').textContent = `Note saved for ${selectedCharacter.charAt(0).toUpperCase() + selectedCharacter.slice(1)}!`;
+        document.getElementById('saved-note-message').innerText = 'Note saved!';
     }
 });
 
-// Add color-changing functionality for the down throw ftilt box
-document.getElementById('down-throw-ftilt').addEventListener('click', (e) => {
-    const color = prompt("Enter a color (e.g., red, yellow, green, purple):", "red");
+// Change color on click for down throw input
+const downThrowInput = document.getElementById('down-throw-ftilt');
+downThrowInput.addEventListener('click', () => {
+    const color = prompt('Enter a color (red, yellow, etc.):'); // Prompt for color input
     if (color) {
-        e.target.style.backgroundColor = color; // Change the background color of the down throw box
+        downThrowInput.style.backgroundColor = color; // Change background color
+        localStorage.setItem(`${characterSelect.value}-down-throw-color`, color); // Save color to local storage
+    }
+});
+
+// Lock editability
+document.getElementById('lock-button').addEventListener('click', () => {
+    if (downThrowInput.contentEditable === "true") {
+        downThrowInput.contentEditable = "false"; // Lock the box
+        alert('Down throw ftilt box is now locked for editing.');
+    } else {
+        downThrowInput.contentEditable = "true"; // Unlock the box
+        alert('Down throw ftilt box is now editable.');
     }
 });
