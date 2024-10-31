@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -601,5 +601,139 @@
             });
         };
     </script>
+</body>
+</html>
+ -->
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smash Ultimate Character Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        select {
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        .character-container {
+            margin: 20px 0;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        .saved-note {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Take Notes for Smash Ultimate Characters</h1>
+    <div>
+        <label for="character-select">Select a Character:</label>
+        <select id="character-select" onchange="loadNote()">
+            <option value="">-- Select a Character --</option>
+            <option value="banjo">Banjo</option>
+            <option value="bayonetta">Bayonetta</option>
+            <option value="bowser">Bowser</option>
+            <option value="bowserjr">Bowser Jr.</option>
+            <option value="byleth">Byleth</option>
+            <option value="captainfalcon">Captain Falcon</option>
+            <option value="charizard">Charizard</option>
+            <option value="chrom">Chrom</option>
+            <option value="cloud">Cloud</option>
+            <option value="corrin">Corrin</option>
+            <option value="daisy">Daisy</option>
+            <option value="dedede">Dedede</option>
+            <option value="diddykong">Diddy Kong</option>
+            <option value="donkeykong">Donkey Kong</option>
+            <option value="drmario">Dr. Mario</option>
+            <option value="duckhunt">Duck Hunt</option>
+            <option value="falco">Falco</option>
+            <option value="fox">Fox</option>
+            <option value="ganon">Ganondorf</option>
+            <option value="greninja">Greninja</option>
+            <option value="hero">Hero</option>
+            <option value="iceclimbers">Ice Climbers</option>
+            <option value="ike">Ike</option>
+            <option value="incineroar">Incineroar</option>
+            <option value="inkling">Inkling</option>
+            <option value="isabelee">Isabelle</option>
+            <option value="ivysaur">Ivysaur</option>
+            <option value="jigglypuff">Jigglypuff</option>
+            <option value="joker">Joker</option>
+            <option value="kazuya">Kazuya</option>
+            <option value="ken">Ken</option>
+            <option value="kirby">Kirby</option>
+            <option value="krool">King K. Rool</option>
+            <option value="link">Link</option>
+            <option value="littlemac">Little Mac</option>
+            <option value="lucario">Lucario</option>
+            <option value="lucas">Lucas</option>
+            <option value="lucina">Lucina</option>
+            <option value="luigi">Luigi</option>
+            <option value="mario">Mario</option>
+            <option value="marth">Marth</option>
+            <option value="megaman">Mega Man</option>
+            <option value="metaknight">Meta Knight</option>
+            <option value="mewtwo">Mewtwo</option>
+            <option value="miibrawler">Mii Brawler</option>
+            <option value="miigunner">Mii Gunner</option>
+            <option value="miiswordsman">Mii Swordsman</option>
+            <option value="minmin">Min Min</option>
+            <option value="mythra">Mythra</option>
+            <option value="ness">Ness</option>
+            <option value="olimar">Olimar</option>
+            <option value="palutena">Palutena</option>
+            <option value="peach">Peach</option>
+            <option value="pichu">Pichu</option>
+            <option value="pikachu">Pikachu</option>
+            <option value="piranhaplant">Piranha Plant</option>
+            <option value="pit">Pit</option>
+            <option value="pitb">Dark Pit</option>
+            <option value="ptrainer">Pokémon Trainer</option>
+            <option value="pyra">Pyra</option>
+            <option value="richter">Richter</option>
+            <option value="ridley">Ridley</option>
+            <option value="robin">Robin</option>
+            <option value="rosalina">Rosalina</option>
+            <option value="roy">Roy</option>
+            <option value="ryu">Ryu</option>
+            <option value="samus">Samus</option>
+            <option value="samusd">Dark Samus</option>
+            <option value="sephiroth">Sephiroth</option>
+            <option value="sheik">Sheik</option>
+            <option value="shulk">Shulk</option>
+            <option value="simon">Simon</option>
+            <option value="snake">Snake</option>
+            <option value="sonic">Sonic</option>
+            <option value="sora">Sora</option>
+            <option value="squirtle">Squirtle</option>
+            <option value="terry">Terry</option>
+            <option value="toonlink">Toon Link</option>
+            <option value="villager">Villager</option>
+            <option value="wario">Wario</option>
+            <option value="wiifit">Wii Fit Trainer</option>
+            <option value="wolf">Wolf</option>
+            <option value="yoshi">Yoshi</option>
+            <option value="younglink">Young Link</option>
+            <option value="zelda">Zelda</option>
+            <option value="zerosuit">Zero Suit Samus</option>
+        </select>
+    </div>
+    <div class="character-container">
+        <textarea id="character-note" placeholder="Enter your notes here..."></textarea>
+        <button onclick="saveNote(document.getElementById('character-select').value)">Save Note</button>
+        <p id="character-saved-note" class="saved-note"></p>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
