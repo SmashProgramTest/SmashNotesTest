@@ -65,20 +65,17 @@ characterSelect.addEventListener('change', () => {
     } else {
         icon.style.display = 'none'; // Hide the large icon if no character is selected
         selectIcon.style.display = 'none'; // Hide the small icon if no character is selected
-        document.getElementById('note').value = ''; // Clear the note
-        document.getElementById('down-throw-ftilt').innerText = ''; // Clear down throw input
-        document.getElementById('down-throw-ftilt').style.backgroundColor = ''; // Reset color
     }
 });
 
-// Save note and down throw value on button click
+// Save note and down throw input
 document.getElementById('save-button').addEventListener('click', () => {
     const selectedCharacter = characterSelect.value;
-    const noteContent = document.getElementById('note').value;
-    const downThrowValue = document.getElementById('down-throw-ftilt').innerText;
+    const noteValue = document.getElementById('note').value;
+    const downThrowValue = document.getElementById('down-throw-ftilt').innerText; // Get innerText for the editable div
 
     if (selectedCharacter) {
-        localStorage.setItem(`${selectedCharacter}-note`, noteContent); // Save note
+        localStorage.setItem(`${selectedCharacter}-note`, noteValue); // Save note
         localStorage.setItem(`${selectedCharacter}-down-throw`, downThrowValue); // Save down throw
         document.getElementById('saved-note-message').textContent = 'Note saved!';
     }
@@ -96,8 +93,10 @@ document.getElementById('lock-button').addEventListener('click', () => {
         // Save the background color before locking
         const currentColor = downThrowInput.style.backgroundColor;
         localStorage.setItem(`${selectedCharacter}-down-throw-color`, currentColor); // Save current color
+        localStorage.setItem(`${selectedCharacter}-locked`, 'true'); // Mark as locked
         alert('Down throw ftilt % locked!'); // Notify user
     } else {
+        localStorage.setItem(`${selectedCharacter}-locked`, 'false'); // Mark as unlocked
         alert('Down throw ftilt % unlocked!'); // Notify user
     }
 });
