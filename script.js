@@ -58,6 +58,10 @@ characterSelect.addEventListener('change', () => {
         if (savedDownThrowColor) {
             downThrowInput.style.backgroundColor = savedDownThrowColor; // Set color if it exists
         }
+        
+        // Load locked state if available
+        const isLocked = localStorage.getItem(`${selectedCharacter}-locked`) === 'true';
+        toggleEditable(isLocked);
     } else {
         icon.style.display = 'none'; // Hide the large icon if no character is selected
         selectIcon.style.display = 'none'; // Hide the small icon if no character is selected
@@ -74,32 +78,33 @@ document.getElementById('save-button').addEventListener('click', () => {
     const downThrowValue = document.getElementById('down-throw-ftilt').innerText;
 
     if (selectedCharacter) {
-        localStorage.setItem(`${selectedCharacter}-note`, noteContent); // Save note to local storage
-        localStorage.setItem(`${selectedCharacter}-down-throw`, downThrowValue); // Save down throw value
-        const downThrowColor = document.getElementById('down-throw-ftilt').style.backgroundColor;
-        localStorage.setItem(`${selectedCharacter}-down-throw-color`, downThrowColor); // Save down throw color
-
-        document.getElementById('saved-note-message').innerText = 'Note saved!';
+        localStorage.setItem(`${selectedCharacter}-note`, noteContent); // Save note
+        localStorage.setItem(`${selectedCharacter}-down-throw`, downThrowValue); // Save down throw
+        document.getElementById('saved-note-message').textContent = 'Note saved!';
     }
 });
 
-// Change color on click for down throw input
-const downThrowInput = document.getElementById('down-throw-ftilt');
-downThrowInput.addEventListener('click', () => {
-    const color = prompt('Enter a color (red, yellow, etc.):'); // Prompt for color input
-    if (color) {
-        downThrowInput.style.backgroundColor = color; // Change background color
-        localStorage.setItem(`${characterSelect.value}-down-throw-color`, color); // Save color to local storage
-    }
-});
-
-// Lock editability
+// Lock and unlock the editability of the down throw input
 document.getElementById('lock-button').addEventListener('click', () => {
-    if (downThrowInput.contentEditable === "true") {
-        downThrowInput.contentEditable = "false"; // Lock the box
-        alert('Down throw ftilt box is now locked for editing.');
+    const selectedCharacter = characterSelect.value;
+    const downThrowInput = document.getElementById('down-throw-ftilt');
+    const isLocked = downThrowInput.isContentEditable;
+
+    toggleEditable(!isLocked); // Toggle lock state
+
+    if (isLocked) {
+        // Save the background color before locking
+        const currentColor = downThrowInput.style.backgroundColor;
+        localStorage.setItem(`${selectedCharacter}-down-throw-color`, currentColor); // Save current color
+        alert('Down throw ftilt % locked!'); // Notify user
     } else {
-        downThrowInput.contentEditable = "true"; // Unlock the box
-        alert('Down throw ftilt box is now editable.');
+        alert('Down throw ftilt % unlocked!'); // Notify user
     }
 });
+
+// Function to toggle editable state
+function toggleEditable(lock) {
+    const downThrowInput = document.getElementById('down-throw-ftilt');
+    downThrowInput.contentEditable = !lock; // Toggle contenteditable
+    downThrowInput.style.backgroundColor = lock ? '#555' : '#444'; // Change color when locked
+}
