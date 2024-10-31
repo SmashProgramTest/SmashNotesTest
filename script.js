@@ -28,16 +28,6 @@ characters.forEach(character => {
     characterSelect.appendChild(option);
 });
 
-// Load saved notes and update icon
-window.onload = () => {
-    characters.forEach(character => {
-        const savedNote = localStorage.getItem(`${character}-note`);
-        if (savedNote) {
-            document.getElementById(`${character}-note`).value = savedNote;
-        }
-    });
-};
-
 // Display icon and notes when character is selected
 characterSelect.addEventListener('change', () => {
     const selectedCharacter = characterSelect.value;
@@ -45,7 +35,7 @@ characterSelect.addEventListener('change', () => {
 
     if (selectedCharacter) {
         // Set the icon source based on character selected
-        icon.src = `icon_${selectedCharacter}.png`; // Update this path if necessary
+        icon.src = `icon_${selectedCharacter}.png`; // Make sure this matches your actual icon file naming
         icon.style.display = 'block'; // Show the icon
         const savedNote = localStorage.getItem(`${selectedCharacter}-note`);
         document.getElementById('note').value = savedNote ? savedNote : '';
