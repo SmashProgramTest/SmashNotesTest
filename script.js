@@ -34,24 +34,13 @@ characterSelect.addEventListener('change', () => {
     const icon = document.getElementById('icon');
 
     if (selectedCharacter) {
-        // Set the icon source based on character selected
-        icon.src = `icon_${selectedCharacter}.png`; // Make sure this matches your actual icon file naming
+        // Set the icon source based on character selected, including the 'images' folder
+        icon.src = `images/icon_${selectedCharacter}.png`; // Updated to include the 'images' folder
         icon.style.display = 'block'; // Show the icon
         const savedNote = localStorage.getItem(`${selectedCharacter}-note`);
         document.getElementById('note').value = savedNote ? savedNote : '';
     } else {
         icon.style.display = 'none'; // Hide the icon if no character is selected
         document.getElementById('note').value = ''; // Clear the note
-    }
-});
-
-// Save the note
-document.getElementById('save-button').addEventListener('click', () => {
-    const selectedCharacter = characterSelect.value;
-    const note = document.getElementById('note').value;
-
-    if (selectedCharacter) {
-        localStorage.setItem(`${selectedCharacter}-note`, note);
-        document.getElementById('saved-note-message').textContent = 'Note saved!';
     }
 });
