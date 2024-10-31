@@ -93,6 +93,10 @@
         #icon {
             display: none; /* Hide the large icon by default */
         }
+
+        .lock-button {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -115,6 +119,7 @@
         <div class="input-container">
             <label class="input-label">Down throw ftilt %:</label>
             <div id="down-throw-ftilt" class="colored-box" contenteditable="true" placeholder="Enter value..." style="cursor: text;"></div>
+            <button id="lock-button" class="lock-button">Lock Editability</button> <!-- Lock button -->
         </div>
 
         <textarea id="note" placeholder="Type your notes here..."></textarea>
