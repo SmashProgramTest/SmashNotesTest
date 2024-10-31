@@ -11,11 +11,20 @@
             background-color: #2c2c2c; /* Dark background */
             color: #f9f9f9; /* Light text color */
             display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center align items */
+        }
+
+        img {
+            max-width: 100%; /* Ensure images do not overflow */
+            height: auto;
         }
 
         .character-container {
             flex: 1;
-            margin-right: 20px;
+            margin-top: 20px; /* Add margin to separate from the GIF */
+            width: 100%; /* Full width for character container */
+            max-width: 800px; /* Maximum width for layout */
             position: relative; /* To position the colored box */
         }
 
@@ -76,12 +85,13 @@
         }
 
         button {
-            padding: 10px 15px;
+            padding: 5px 10px; /* Smaller button padding */
             background-color: #007bff;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            margin-left: 10px; /* Space between button and colored box */
         }
 
         button:hover {
@@ -99,10 +109,13 @@
 
         .lock-button {
             margin-top: 10px;
+            width: 60px; /* Fixed width for the lock button */
         }
     </style>
 </head>
 <body>
+
+    <img src="minionswag.gif" alt="Minion Swag GIF" /> <!-- GIF at the top of the page -->
 
     <div class="character-container">
         <h1>Smash Ultimate Character Notes</h1>
@@ -122,7 +135,7 @@
         <div class="input-container">
             <label class="input-label">Down throw ftilt %:</label>
             <div id="down-throw-ftilt" class="colored-box" contenteditable="true" placeholder="Enter value..." style="cursor: text;"></div>
-            <button id="lock-button" class="lock-button">Lock Editability</button> <!-- Lock button -->
+            <button id="lock-button" class="lock-button">Lock</button> <!-- Lock button -->
         </div>
 
         <textarea id="note" placeholder="Type your notes here..."></textarea>
