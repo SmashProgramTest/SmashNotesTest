@@ -21,6 +21,8 @@ const characters = [
 
 // Populate the character select dropdown
 const characterSelect = document.getElementById('character-select');
+const selectIcon = document.getElementById('select-icon');
+
 characters.forEach(character => {
     const option = document.createElement('option');
     option.value = character;
@@ -34,24 +36,30 @@ characterSelect.addEventListener('change', () => {
     const icon = document.getElementById('icon');
 
     if (selectedCharacter) {
-        // Set the icon source based on character selected, including the 'images' folder
+        // Set the icon source based on character selected
         icon.src = `images/icon_${selectedCharacter}.png`;
-        icon.style.display = 'block'; // Show the icon
+        icon.style.display = 'block'; // Show the large icon
+
+        // Set the small icon next to the dropdown
+        selectIcon.src = `images/icon_${selectedCharacter}.png`; // Set small icon source
+        selectIcon.style.display = 'inline'; // Show small icon next to select
+
         const savedNote = localStorage.getItem(`${selectedCharacter}-note`);
         document.getElementById('note').value = savedNote ? savedNote : '';
     } else {
-        icon.style.display = 'none'; // Hide the icon if no character is selected
+        icon.style.display = 'none'; // Hide the large icon if no character is selected
+        selectIcon.style.display = 'none'; // Hide the small icon if no character is selected
         document.getElementById('note').value = ''; // Clear the note
     }
 });
 
-// Save note functionality
+// Save note on button click
 document.getElementById('save-button').addEventListener('click', () => {
     const selectedCharacter = characterSelect.value;
-    const note = document.getElementById('note').value;
-    localStorage.setItem(`${selectedCharacter}-note`, note);
-    
-    const savedNoteMessage = document.getElementById('saved-note-message');
-    savedNoteMessage.textContent = 'Note saved!';
-    setTimeout(() => savedNoteMessage.textContent = '', 2000); // Clear message after 2 seconds
+    const noteContent = document.getElementById('note').value;
+
+    if (selectedCharacter) {
+        localStorage.setItem(`${selectedCharacter}-note`, noteContent); // Save note to local storage
+        document.getElementById('saved-note-message').textContent = `Note saved for ${selectedCharacter.charAt(0).toUpperCase() + selectedCharacter.slice(1)}!`;
+    }
 });
