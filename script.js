@@ -34,8 +34,6 @@ characters.forEach(character => {
 characterSelect.addEventListener('change', () => {
     const selectedCharacter = characterSelect.value;
     const icon = document.getElementById('icon');
-    const downThrowInput = document.getElementById('down-throw-ftilt');
-    const colorSelect = document.getElementById('box-color');
 
     if (selectedCharacter) {
         // Set the icon source based on character selected
@@ -46,46 +44,40 @@ characterSelect.addEventListener('change', () => {
         selectIcon.src = `images/icon_${selectedCharacter}.png`; // Set small icon source
         selectIcon.style.display = 'inline'; // Show small icon next to select
 
-        // Load saved note and stats if available
+        // Load saved note if available
         const savedNote = localStorage.getItem(`${selectedCharacter}-note`);
         document.getElementById('note').value = savedNote ? savedNote : '';
-        
+
+        // Load saved down throw value if available
         const savedDownThrow = localStorage.getItem(`${selectedCharacter}-down-throw`);
-        downThrowInput.value = savedDownThrow ? savedDownThrow : '';
-        
-        const savedColor = localStorage.getItem(`${selectedCharacter}-color`);
-        colorSelect.value = savedColor ? savedColor : 'white'; // Default to white
-        downThrowInput.style.backgroundColor = colorSelect.value; // Set background color
+        const downThrowInput = document.getElementById('down-throw-ftilt');
+        downThrowInput.innerText = savedDownThrow ? savedDownThrow : ''; // Set innerText for editable div
     } else {
         icon.style.display = 'none'; // Hide the large icon if no character is selected
         selectIcon.style.display = 'none'; // Hide the small icon if no character is selected
         document.getElementById('note').value = ''; // Clear the note
-        downThrowInput.value = ''; // Clear down throw input
-        downThrowInput.style.backgroundColor = 'white'; // Reset background color
-        colorSelect.value = 'white'; // Reset color selection
+        document.getElementById('down-throw-ftilt').innerText = ''; // Clear down throw input
     }
 });
 
-// Update the down throw input box color and save the value
-const downThrowInput = document.getElementById('down-throw-ftilt');
-const colorSelect = document.getElementById('box-color');
-
-colorSelect.addEventListener('change', () => {
-    downThrowInput.style.backgroundColor = colorSelect.value; // Change the background color
-});
-
-// Save note and stats on button click
+// Save note and down throw value on button click
 document.getElementById('save-button').addEventListener('click', () => {
     const selectedCharacter = characterSelect.value;
     const noteContent = document.getElementById('note').value;
-    const downThrowValue = downThrowInput.value;
-    const colorValue = colorSelect.value;
+    const downThrowValue = document.getElementById('down-throw-ftilt').innerText;
 
     if (selectedCharacter) {
         localStorage.setItem(`${selectedCharacter}-note`, noteContent); // Save note to local storage
         localStorage.setItem(`${selectedCharacter}-down-throw`, downThrowValue); // Save down throw value
-        localStorage.setItem(`${selectedCharacter}-color`, colorValue); // Save background color
 
         document.getElementById('saved-note-message').textContent = `Note saved for ${selectedCharacter.charAt(0).toUpperCase() + selectedCharacter.slice(1)}!`;
+    }
+});
+
+// Add color-changing functionality for the down throw ftilt box
+document.getElementById('down-throw-ftilt').addEventListener('click', (e) => {
+    const color = prompt("Enter a color (e.g., red, yellow, green, purple):", "red");
+    if (color) {
+        e.target.style.backgroundColor = color; // Change the background color of the down throw box
     }
 });
