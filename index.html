@@ -3,28 +3,592 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Smash Bros. Ultimate Characters</title>
+    <title>Super Smash Bros. Ultimate Character Notes</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Super Smash Bros. Ultimate Characters</h1>
+        <h1>Super Smash Bros. Ultimate Character Notes</h1>
     </header>
     <main>
+        <div class="character" id="banjo">
+            <img src="images/icon_banjo.png" alt="Banjo">
+            <h2>Banjo</h2>
+            <textarea id="banjo-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('banjo')">Save Note</button>
+            <p id="banjo-saved-note"></p>
+        </div>
         <div class="character" id="bayonetta">
             <img src="images/icon_bayonetta.png" alt="Bayonetta">
             <h2>Bayonetta</h2>
-            <p>Notes about Bayonetta...</p>
+            <textarea id="bayonetta-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('bayonetta')">Save Note</button>
+            <p id="bayonetta-saved-note"></p>
+        </div>
+        <div class="character" id="bowser">
+            <img src="images/icon_bowser.png" alt="Bowser">
+            <h2>Bowser</h2>
+            <textarea id="bowser-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('bowser')">Save Note</button>
+            <p id="bowser-saved-note"></p>
+        </div>
+        <div class="character" id="bowserjr">
+            <img src="images/icon_bowserjr.png" alt="Bowser Jr.">
+            <h2>Bowser Jr.</h2>
+            <textarea id="bowserjr-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('bowserjr')">Save Note</button>
+            <p id="bowserjr-saved-note"></p>
+        </div>
+        <div class="character" id="byleth">
+            <img src="images/icon_byleth.png" alt="Byleth">
+            <h2>Byleth</h2>
+            <textarea id="byleth-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('byleth')">Save Note</button>
+            <p id="byleth-saved-note"></p>
+        </div>
+        <div class="character" id="captainfalcon">
+            <img src="images/icon_captainfalcon.png" alt="Captain Falcon">
+            <h2>Captain Falcon</h2>
+            <textarea id="captainfalcon-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('captainfalcon')">Save Note</button>
+            <p id="captainfalcon-saved-note"></p>
+        </div>
+        <div class="character" id="charizard">
+            <img src="images/icon_charizard.png" alt="Charizard">
+            <h2>Charizard</h2>
+            <textarea id="charizard-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('charizard')">Save Note</button>
+            <p id="charizard-saved-note"></p>
+        </div>
+        <div class="character" id="chrom">
+            <img src="images/icon_chrom.png" alt="Chrom">
+            <h2>Chrom</h2>
+            <textarea id="chrom-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('chrom')">Save Note</button>
+            <p id="chrom-saved-note"></p>
+        </div>
+        <div class="character" id="cloud">
+            <img src="images/icon_cloud.png" alt="Cloud">
+            <h2>Cloud</h2>
+            <textarea id="cloud-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('cloud')">Save Note</button>
+            <p id="cloud-saved-note"></p>
+        </div>
+        <div class="character" id="corrin">
+            <img src="images/icon_corrin.png" alt="Corrin">
+            <h2>Corrin</h2>
+            <textarea id="corrin-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('corrin')">Save Note</button>
+            <p id="corrin-saved-note"></p>
+        </div>
+        <div class="character" id="daisy">
+            <img src="images/icon_daisy.png" alt="Daisy">
+            <h2>Daisy</h2>
+            <textarea id="daisy-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('daisy')">Save Note</button>
+            <p id="daisy-saved-note"></p>
+        </div>
+        <div class="character" id="dedede">
+            <img src="images/icon_dedede.png" alt="King Dedede">
+            <h2>King Dedede</h2>
+            <textarea id="dedede-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('dedede')">Save Note</button>
+            <p id="dedede-saved-note"></p>
+        </div>
+        <div class="character" id="diddykong">
+            <img src="images/icon_diddykong.png" alt="Diddy Kong">
+            <h2>Diddy Kong</h2>
+            <textarea id="diddykong-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('diddykong')">Save Note</button>
+            <p id="diddykong-saved-note"></p>
+        </div>
+        <div class="character" id="donkeykong">
+            <img src="images/icon_donkeykong.png" alt="Donkey Kong">
+            <h2>Donkey Kong</h2>
+            <textarea id="donkeykong-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('donkeykong')">Save Note</button>
+            <p id="donkeykong-saved-note"></p>
+        </div>
+        <div class="character" id="drmario">
+            <img src="images/icon_drmario.png" alt="Dr. Mario">
+            <h2>Dr. Mario</h2>
+            <textarea id="drmario-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('drmario')">Save Note</button>
+            <p id="drmario-saved-note"></p>
+        </div>
+        <div class="character" id="duckhunt">
+            <img src="images/icon_duckhunt.png" alt="Duck Hunt">
+            <h2>Duck Hunt</h2>
+            <textarea id="duckhunt-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('duckhunt')">Save Note</button>
+            <p id="duckhunt-saved-note"></p>
+        </div>
+        <div class="character" id="falco">
+            <img src="images/icon_falco.png" alt="Falco">
+            <h2>Falco</h2>
+            <textarea id="falco-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('falco')">Save Note</button>
+            <p id="falco-saved-note"></p>
+        </div>
+        <div class="character" id="fox">
+            <img src="images/icon_fox.png" alt="Fox">
+            <h2>Fox</h2>
+            <textarea id="fox-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('fox')">Save Note</button>
+            <p id="fox-saved-note"></p>
+        </div>
+        <div class="character" id="ganon">
+            <img src="images/icon_ganon.png" alt="Ganondorf">
+            <h2>Ganondorf</h2>
+            <textarea id="ganon-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('ganon')">Save Note</button>
+            <p id="ganon-saved-note"></p>
+        </div>
+        <div class="character" id="greninja">
+            <img src="images/icon_greninja.png" alt="Greninja">
+            <h2>Greninja</h2>
+            <textarea id="greninja-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('greninja')">Save Note</button>
+            <p id="greninja-saved-note"></p>
+        </div>
+        <div class="character" id="hero">
+            <img src="images/icon_hero.png" alt="Hero">
+            <h2>Hero</h2>
+            <textarea id="hero-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('hero')">Save Note</button>
+            <p id="hero-saved-note"></p>
+        </div>
+        <div class="character" id="iceclimbers">
+            <img src="images/icon_iceclimbers.png" alt="Ice Climbers">
+            <h2>Ice Climbers</h2>
+            <textarea id="iceclimbers-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('iceclimbers')">Save Note</button>
+            <p id="iceclimbers-saved-note"></p>
+        </div>
+        <div class="character" id="ike">
+            <img src="images/icon_ike.png" alt="Ike">
+            <h2>Ike</h2>
+            <textarea id="ike-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('ike')">Save Note</button>
+            <p id="ike-saved-note"></p>
+        </div>
+        <div class="character" id="incineroar">
+            <img src="images/icon_incineroar.png" alt="Incineroar">
+            <h2>Incineroar</h2>
+            <textarea id="incineroar-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('incineroar')">Save Note</button>
+            <p id="incineroar-saved-note"></p>
+        </div>
+        <div class="character" id="inkling">
+            <img src="images/icon_inkling.png" alt="Inkling">
+            <h2>Inkling</h2>
+            <textarea id="inkling-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('inkling')">Save Note</button>
+            <p id="inkling-saved-note"></p>
+        </div>
+        <div class="character" id="isabelee">
+            <img src="images/icon_isabelee.png" alt="Isabelle">
+            <h2>Isabelle</h2>
+            <textarea id="isabelee-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('isabelee')">Save Note</button>
+            <p id="isabelee-saved-note"></p>
+        </div>
+        <div class="character" id="ivysaur">
+            <img src="images/icon_ivysaur.png" alt="Ivysaur">
+            <h2>Ivysaur</h2>
+            <textarea id="ivysaur-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('ivysaur')">Save Note</button>
+            <p id="ivysaur-saved-note"></p>
+        </div>
+        <div class="character" id="jigglypuff">
+            <img src="images/icon_jigglypuff.png" alt="Jigglypuff">
+            <h2>Jigglypuff</h2>
+            <textarea id="jigglypuff-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('jigglypuff')">Save Note</button>
+            <p id="jigglypuff-saved-note"></p>
+        </div>
+        <div class="character" id="joker">
+            <img src="images/icon_joker.png" alt="Joker">
+            <h2>Joker</h2>
+            <textarea id="joker-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('joker')">Save Note</button>
+            <p id="joker-saved-note"></p>
+        </div>
+        <div class="character" id="kazuya">
+            <img src="images/icon_kazuya.png" alt="Kazuya">
+            <h2>Kazuya</h2>
+            <textarea id="kazuya-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('kazuya')">Save Note</button>
+            <p id="kazuya-saved-note"></p>
+        </div>
+        <div class="character" id="ken">
+            <img src="images/icon_ken.png" alt="Ken">
+            <h2>Ken</h2>
+            <textarea id="ken-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('ken')">Save Note</button>
+            <p id="ken-saved-note"></p>
+        </div>
+        <div class="character" id="kirby">
+            <img src="images/icon_kirby.png" alt="Kirby">
+            <h2>Kirby</h2>
+            <textarea id="kirby-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('kirby')">Save Note</button>
+            <p id="kirby-saved-note"></p>
+        </div>
+        <div class="character" id="krool">
+            <img src="images/icon_krool.png" alt="King K. Rool">
+            <h2>King K. Rool</h2>
+            <textarea id="krool-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('krool')">Save Note</button>
+            <p id="krool-saved-note"></p>
+        </div>
+        <div class="character" id="link">
+            <img src="images/icon_link.png" alt="Link">
+            <h2>Link</h2>
+            <textarea id="link-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('link')">Save Note</button>
+            <p id="link-saved-note"></p>
+        </div>
+        <div class="character" id="littlemac">
+            <img src="images/icon_littlemac.png" alt="Little Mac">
+            <h2>Little Mac</h2>
+            <textarea id="littlemac-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('littlemac')">Save Note</button>
+            <p id="littlemac-saved-note"></p>
+        </div>
+        <div class="character" id="lucario">
+            <img src="images/icon_lucario.png" alt="Lucario">
+            <h2>Lucario</h2>
+            <textarea id="lucario-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('lucario')">Save Note</button>
+            <p id="lucario-saved-note"></p>
+        </div>
+        <div class="character" id="lucas">
+            <img src="images/icon_lucas.png" alt="Lucas">
+            <h2>Lucas</h2>
+            <textarea id="lucas-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('lucas')">Save Note</button>
+            <p id="lucas-saved-note"></p>
+        </div>
+        <div class="character" id="lucina">
+            <img src="images/icon_lucina.png" alt="Lucina">
+            <h2>Lucina</h2>
+            <textarea id="lucina-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('lucina')">Save Note</button>
+            <p id="lucina-saved-note"></p>
+        </div>
+        <div class="character" id="luigi">
+            <img src="images/icon_luigi.png" alt="Luigi">
+            <h2>Luigi</h2>
+            <textarea id="luigi-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('luigi')">Save Note</button>
+            <p id="luigi-saved-note"></p>
         </div>
         <div class="character" id="mario">
             <img src="images/icon_mario.png" alt="Mario">
             <h2>Mario</h2>
-            <p>Notes about Mario...</p>
+            <textarea id="mario-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('mario')">Save Note</button>
+            <p id="mario-saved-note"></p>
         </div>
-        <!-- Add more characters here -->
-    </main>
-    <footer>
-        <p>&copy; 2024 Smash Bros Fan Page</p>
-    </footer>
+        <div class="character" id="marth">
+            <img src="images/icon_marth.png" alt="Marth">
+            <h2>Marth</h2>
+            <textarea id="marth-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('marth')">Save Note</button>
+            <p id="marth-saved-note"></p>
+        </div>
+        <div class="character" id="megaman">
+            <img src="images/icon_megaman.png" alt="Mega Man">
+            <h2>Mega Man</h2>
+            <textarea id="megaman-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('megaman')">Save Note</button>
+            <p id="megaman-saved-note"></p>
+        </div>
+        <div class="character" id="metaknight">
+            <img src="images/icon_metaknight.png" alt="Meta Knight">
+            <h2>Meta Knight</h2>
+            <textarea id="metaknight-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('metaknight')">Save Note</button>
+            <p id="metaknight-saved-note"></p>
+        </div>
+        <div class="character" id="mewtwo">
+            <img src="images/icon_mewtwo.png" alt="Mewtwo">
+            <h2>Mewtwo</h2>
+            <textarea id="mewtwo-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('mewtwo')">Save Note</button>
+            <p id="mewtwo-saved-note"></p>
+        </div>
+        <div class="character" id="miibrawler">
+            <img src="images/icon_miibrawler.png" alt="Mii Brawler">
+            <h2>Mii Brawler</h2>
+            <textarea id="miibrawler-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('miibrawler')">Save Note</button>
+            <p id="miibrawler-saved-note"></p>
+        </div>
+        <div class="character" id="miigunner">
+            <img src="images/icon_miigunner.png" alt="Mii Gunner">
+            <h2>Mii Gunner</h2>
+            <textarea id="miigunner-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('miigunner')">Save Note</button>
+            <p id="miigunner-saved-note"></p>
+        </div>
+        <div class="character" id="miiswordsman">
+            <img src="images/icon_miiswordsman.png" alt="Mii Swordsman">
+            <h2>Mii Swordsman</h2>
+            <textarea id="miiswordsman-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('miiswordsman')">Save Note</button>
+            <p id="miiswordsman-saved-note"></p>
+        </div>
+        <div class="character" id="minmin">
+            <img src="images/icon_minmin.png" alt="Min Min">
+            <h2>Min Min</h2>
+            <textarea id="minmin-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('minmin')">Save Note</button>
+            <p id="minmin-saved-note"></p>
+        </div>
+        <div class="character" id="mythra">
+            <img src="images/icon_mythra.png" alt="Mythra">
+            <h2>Mythra</h2>
+            <textarea id="mythra-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('mythra')">Save Note</button>
+            <p id="mythra-saved-note"></p>
+        </div>
+        <div class="character" id="ness">
+            <img src="images/icon_ness.png" alt="Ness">
+            <h2>Ness</h2>
+            <textarea id="ness-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('ness')">Save Note</button>
+            <p id="ness-saved-note"></p>
+        </div>
+        <div class="character" id="olimar">
+            <img src="images/icon_olimar.png" alt="Olimar">
+            <h2>Olimar</h2>
+            <textarea id="olimar-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('olimar')">Save Note</button>
+            <p id="olimar-saved-note"></p>
+        </div>
+        <div class="character" id="palutena">
+            <img src="images/icon_palutena.png" alt="Palutena">
+            <h2>Palutena</h2>
+            <textarea id="palutena-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('palutena')">Save Note</button>
+            <p id="palutena-saved-note"></p>
+        </div>
+        <div class="character" id="peach">
+            <img src="images/icon_peach.png" alt="Peach">
+            <h2>Peach</h2>
+            <textarea id="peach-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('peach')">Save Note</button>
+            <p id="peach-saved-note"></p>
+        </div>
+        <div class="character" id="pichu">
+            <img src="images/icon_pichu.png" alt="Pichu">
+            <h2>Pichu</h2>
+            <textarea id="pichu-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('pichu')">Save Note</button>
+            <p id="pichu-saved-note"></p>
+        </div>
+        <div class="character" id="pikachu">
+            <img src="images/icon_pikachu.png" alt="Pikachu">
+            <h2>Pikachu</h2>
+            <textarea id="pikachu-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('pikachu')">Save Note</button>
+            <p id="pikachu-saved-note"></p>
+        </div>
+        <div class="character" id="piranhaplant">
+            <img src="images/icon_piranhaplant.png" alt="Piranha Plant">
+            <h2>Piranha Plant</h2>
+            <textarea id="piranhaplant-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('piranhaplant')">Save Note</button>
+            <p id="piranhaplant-saved-note"></p>
+        </div>
+        <div class="character" id="pit">
+            <img src="images/icon_pit.png" alt="Pit">
+            <h2>Pit</h2>
+            <textarea id="pit-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('pit')">Save Note</button>
+            <p id="pit-saved-note"></p>
+        </div>
+        <div class="character" id="pitb">
+            <img src="images/icon_pitb.png" alt="Dark Pit">
+            <h2>Dark Pit</h2>
+            <textarea id="pitb-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('pitb')">Save Note</button>
+            <p id="pitb-saved-note"></p>
+        </div>
+        <div class="character" id="ptrainer">
+            <img src="images/icon_ptrainer.png" alt="Pokemon Trainer">
+            <h2>Pokemon Trainer</h2>
+            <textarea id="ptrainer-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('ptrainer')">Save Note</button>
+            <p id="ptrainer-saved-note"></p>
+        </div>
+        <div class="character" id="pyra">
+            <img src="images/icon_pyra.png" alt="Pyra">
+            <h2>Pyra</h2>
+            <textarea id="pyra-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('pyra')">Save Note</button>
+            <p id="pyra-saved-note"></p>
+        </div>
+        <div class="character" id="richter">
+            <img src="images/icon_richter.png" alt="Richter">
+            <h2>Richter</h2>
+            <textarea id="richter-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('richter')">Save Note</button>
+            <p id="richter-saved-note"></p>
+        </div>
+        <div class="character" id="ridley">
+            <img src="images/icon_ridley.png" alt="Ridley">
+            <h2>Ridley</h2>
+            <textarea id="ridley-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('ridley')">Save Note</button>
+            <p id="ridley-saved-note"></p>
+        </div>
+        <div class="character" id="robin">
+            <img src="images/icon_robin.png" alt="Robin">
+            <h2>Robin</h2>
+            <textarea id="robin-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('robin')">Save Note</button>
+            <p id="robin-saved-note"></p>
+        </div>
+        <div class="character" id="rosalina">
+            <img src="images/icon_rosalina.png" alt="Rosalina">
+            <h2>Rosalina</h2>
+            <textarea id="rosalina-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('rosalina')">Save Note</button>
+            <p id="rosalina-saved-note"></p>
+        </div>
+        <div class="character" id="roy">
+            <img src="images/icon_roy.png" alt="Roy">
+            <h2>Roy</h2>
+            <textarea id="roy-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('roy')">Save Note</button>
+            <p id="roy-saved-note"></p>
+        </div>
+        <div class="character" id="ryu">
+            <img src="images/icon_ryu.png" alt="Ryu">
+            <h2>Ryu</h2>
+            <textarea id="ryu-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('ryu')">Save Note</button>
+            <p id="ryu-saved-note"></p>
+        </div>
+        <div class="character" id="samus">
+            <img src="images/icon_samus.png" alt="Samus">
+            <h2>Samus</h2>
+            <textarea id="samus-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('samus')">Save Note</button>
+            <p id="samus-saved-note"></p>
+        </div>
+        <div class="character" id="simon">
+            <img src="images/icon_simon.png" alt="Simon">
+            <h2>Simon</h2>
+            <textarea id="simon-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('simon')">Save Note</button>
+            <p id="simon-saved-note"></p>
+        </div>
+        <div class="character" id="snake">
+            <img src="images/icon_snake.png" alt="Snake">
+            <h2>Snake</h2>
+            <textarea id="snake-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('snake')">Save Note</button>
+            <p id="snake-saved-note"></p>
+        </div>
+        <div class="character" id="sora">
+            <img src="images/icon_sora.png" alt="Sora">
+            <h2>Sora</h2>
+            <textarea id="sora-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('sora')">Save Note</button>
+            <p id="sora-saved-note"></p>
+        </div>
+        <div class="character" id="toonlink">
+            <img src="images/icon_toonlink.png" alt="Toon Link">
+            <h2>Toon Link</h2>
+            <textarea id="toonlink-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('toonlink')">Save Note</button>
+            <p id="toonlink-saved-note"></p>
+        </div>
+        <div class="character" id="villager">
+            <img src="images/icon_villager.png" alt="Villager">
+            <h2>Villager</h2>
+            <textarea id="villager-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('villager')">Save Note</button>
+            <p id="villager-saved-note"></p>
+        </div>
+        <div class="character" id="wario">
+            <img src="images/icon_wario.png" alt="Wario">
+            <h2>Wario</h2>
+            <textarea id="wario-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('wario')">Save Note</button>
+            <p id="wario-saved-note"></p>
+        </div>
+        <div class="character" id="wii_fit_trainer">
+            <img src="images/icon_wii_fit_trainer.png" alt="Wii Fit Trainer">
+            <h2>Wii Fit Trainer</h2>
+            <textarea id="wii_fit_trainer-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('wii_fit_trainer')">Save Note</button>
+            <p id="wii_fit_trainer-saved-note"></p>
+        </div>
+        <div class="character" id="wolf">
+            <img src="images/icon_wolf.png" alt="Wolf">
+            <h2>Wolf</h2>
+            <textarea id="wolf-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('wolf')">Save Note</button>
+            <p id="wolf-saved-note"></p>
+        </div>
+        <div class="character" id="yoshi">
+            <img src="images/icon_yoshi.png" alt="Yoshi">
+            <h2>Yoshi</h2>
+            <textarea id="yoshi-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('yoshi')">Save Note</button>
+            <p id="yoshi-saved-note"></p>
+        </div>
+        <div class="character" id="zelda">
+            <img src="images/icon_zelda.png" alt="Zelda">
+            <h2>Zelda</h2>
+            <textarea id="zelda-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('zelda')">Save Note</button>
+            <p id="zelda-saved-note"></p>
+        </div>
+        <div class="character" id="zero_suit_samus">
+            <img src="images/icon_zero_suit_samus.png" alt="Zero Suit Samus">
+            <h2>Zero Suit Samus</h2>
+            <textarea id="zero_suit_samus-note" placeholder="Add your notes here..."></textarea>
+            <button onclick="saveNote('zero_suit_samus')">Save Note</button>
+            <p id="zero_suit_samus-saved-note"></p>
+        </div>
+    </div>
+    <script>
+        function saveNote(characterId) {
+            const noteTextArea = document.getElementById(`${characterId}-note`);
+            const savedNote = document.getElementById(`${characterId}-saved-note`);
+
+            // Save the note in localStorage
+            localStorage.setItem(characterId, noteTextArea.value);
+
+            // Display the saved note confirmation
+            savedNote.innerText = 'Note saved!';
+        }
+
+        // Load saved notes when the page loads
+        window.onload = function() {
+            const characterIds = [
+                'ash', 'bayo', 'brawler', 'daisy', 'dark_samus', 'deku', 'donkey_kong', 'falco', 'fox', 'ganondorf',
+                'game_and_watch', 'greninja', 'ike', 'incineroar', 'isabelle', 'jigglypuff', 'ken', 'kirby', 'link',
+                'little_mac', 'lucario', 'lucas', 'luigi', 'mario', 'marth', 'mega_man', 'meta_knight', 'mewtwo',
+                'miibrawler', 'miigunner', 'miiswordsman', 'minmin', 'mythra', 'ness', 'olimar', 'palutena', 'peach',
+                'pichu', 'pikachu', 'piranhaplant', 'pit', 'pitb', 'ptrainer', 'pyra', 'richter', 'ridley', 'robin', 
+                'rosalina', 'roy', 'ryu', 'samus', 'simon', 'snake', 'sora', 'toonlink', 'villager',
+                'wario', 'wii_fit_trainer', 'wolf', 'yoshi', 'zelda', 'zero_suit_samus'
+            ];
+
+            characterIds.forEach(id => {
+                const savedNote = localStorage.getItem(id);
+                if (savedNote) {
+                    document.getElementById(`${id}-note`).value = savedNote;
+                }
+            });
+        };
+    </script>
 </body>
 </html>
