@@ -35,7 +35,7 @@ characterSelect.addEventListener('change', () => {
 
     if (selectedCharacter) {
         // Set the icon source based on character selected, including the 'images' folder
-        icon.src = `images/icon_${selectedCharacter}.png`; // Updated to include the 'images' folder
+        icon.src = `images/icon_${selectedCharacter}.png`;
         icon.style.display = 'block'; // Show the icon
         const savedNote = localStorage.getItem(`${selectedCharacter}-note`);
         document.getElementById('note').value = savedNote ? savedNote : '';
@@ -43,4 +43,15 @@ characterSelect.addEventListener('change', () => {
         icon.style.display = 'none'; // Hide the icon if no character is selected
         document.getElementById('note').value = ''; // Clear the note
     }
+});
+
+// Save note functionality
+document.getElementById('save-button').addEventListener('click', () => {
+    const selectedCharacter = characterSelect.value;
+    const note = document.getElementById('note').value;
+    localStorage.setItem(`${selectedCharacter}-note`, note);
+    
+    const savedNoteMessage = document.getElementById('saved-note-message');
+    savedNoteMessage.textContent = 'Note saved!';
+    setTimeout(() => savedNoteMessage.textContent = '', 2000); // Clear message after 2 seconds
 });
