@@ -1,7 +1,17 @@
 function saveNote(character) {
-    const note = document.getElementById(`${character}-note`).value;
+    const note = document.getElementById(`character-note`).value;
     localStorage.setItem(`${character}-note`, note);
-    document.getElementById(`${character}-saved-note`).innerText = 'Note saved!';
+    document.getElementById(`character-saved-note`).innerText = 'Note saved!';
+}
+
+function loadNote() {
+    const character = document.getElementById('character-select').value;
+    const savedNote = localStorage.getItem(`${character}-note`);
+    if (savedNote) {
+        document.getElementById(`character-note`).value = savedNote;
+    } else {
+        document.getElementById(`character-note`).value = '';
+    }
 }
 
 window.onload = function() {
